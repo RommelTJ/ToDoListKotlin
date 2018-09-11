@@ -4,5 +4,5 @@
     <string name="name">Name</string>
     <string name="textHint">Walk the dog</string>
     <string name="checkbox">CheckBox</string>
-    <string name="button">Button</string>
+    <string name="addButton">ADD</string>
 </resources>
