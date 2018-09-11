@@ -15,5 +15,6 @@
             android:ems="10"
             android:id="@+id/editText" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Walk the dog"/>
 </android.support.constraint.ConstraintLayout>
