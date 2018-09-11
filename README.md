@@ -1,6 +1,6 @@
 # ToDoListKotlin
 
-Version: 0.0.2 - 11 Sep 2018
+Version: 0.0.3 - 11 Sep 2018
 
 ## Description
 

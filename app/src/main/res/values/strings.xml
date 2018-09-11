@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ToDoListKotlin</string>
     <string name="action_settings">Settings</string>
+    <string name="name">Name</string>
+    <string name="textHint">Walk the dog</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="addButton">ADD</string>
 </resources>
