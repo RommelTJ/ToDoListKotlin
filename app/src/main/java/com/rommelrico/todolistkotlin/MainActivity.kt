@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
+
+        // Realm Testing.
+        var myDog = Dog()
+        
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
