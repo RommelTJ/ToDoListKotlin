@@ -22,13 +22,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Realm Testing.
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
         var myDog = Dog()
         myDog.name = "Fido"
         myDog.age = 3
-
-        val realm = Realm.getDefaultInstance()
-        realm.beginTransaction()
-        realm.copyToRealm(myDog)
         realm.commitTransaction()
 
     }
