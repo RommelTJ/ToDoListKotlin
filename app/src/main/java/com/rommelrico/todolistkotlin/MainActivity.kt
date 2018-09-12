@@ -24,10 +24,9 @@ class MainActivity : AppCompatActivity() {
         // Realm Testing.
         val realm = Realm.getDefaultInstance()
         realm.beginTransaction()
-        var myDog = Dog()
-        myDog.name = "Fido"
-        myDog.age = 3
-        realm.copyToRealm(myDog)
+        var myDog = realm.createObject(Dog::class.java)
+        myDog.name = "Keiko"
+        myDog.age = 11
         realm.commitTransaction()
 
         val query = realm.where(Dog::class.java)
