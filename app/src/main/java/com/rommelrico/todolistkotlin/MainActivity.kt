@@ -2,10 +2,10 @@ package com.rommelrico.todolistkotlin
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import io.realm.Realm
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,6 +20,23 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
+
+        // Realm Testing.
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        var myDog = realm.createObject(Dog::class.java)
+        myDog.name = "Keiko"
+        myDog.age = 11
+        realm.commitTransaction()
+
+        val query = realm.where(Dog::class.java)
+        val queryResults = query.findAll()
+        println("HERE")
+        println("${queryResults.size}")
+        for (dog in queryResults) {
+            println("${dog.name}")
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
