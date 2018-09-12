@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         // Realm Testing.
         var myDog = Dog()
-        
+        myDog.name = "Fido"
+        myDog.age = 3
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
