@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+// Realm Android
+apply plugin: 'realm-android'
+
 android {
     compileSdkVersion 26
     buildToolsVersion "28.0.2"
