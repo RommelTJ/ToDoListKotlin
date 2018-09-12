@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
-
-        // Realm Testing.
-        Realm.init(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
