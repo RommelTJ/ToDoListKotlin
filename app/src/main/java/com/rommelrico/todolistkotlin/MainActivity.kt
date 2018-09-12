@@ -27,7 +27,16 @@ class MainActivity : AppCompatActivity() {
         var myDog = Dog()
         myDog.name = "Fido"
         myDog.age = 3
+        realm.copyToRealm(myDog)
         realm.commitTransaction()
+
+        val query = realm.where(Dog::class.java)
+        val queryResults = query.findAll()
+        println("HERE")
+        println("${queryResults.size}")
+        for (dog in queryResults) {
+            println("${dog.name}")
+        }
 
     }
 
