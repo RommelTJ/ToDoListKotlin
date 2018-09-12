@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import io.realm.Realm
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         var myDog = Dog()
         myDog.name = "Fido"
         myDog.age = 3
+
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        realm.copyToRealm(myDog)
+        realm.commitTransaction()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
