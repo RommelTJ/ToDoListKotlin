@@ -3,6 +3,7 @@ package com.rommelrico.todolistkotlin
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import io.realm.Realm
 
 class AddToDoActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class AddToDoActivity : AppCompatActivity() {
         // Getting access to the button.
         val button = findViewById<Button>(R.id.addButton)
         button.setOnClickListener {
-            println("---> Click")
+            val realm = Realm.getDefaultInstance()
         }
 
     }
