@@ -21,20 +21,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(addIntent)
         }
 
-        // Realm Testing.
+        // Querying for To-do items.
         val realm = Realm.getDefaultInstance()
-        realm.beginTransaction()
-        var myDog = realm.createObject(Dog::class.java)
-        myDog.name = "Keiko"
-        myDog.age = 11
-        realm.commitTransaction()
-
-        val query = realm.where(Dog::class.java)
-        val queryResults = query.findAll()
-        println("HERE")
-        println("${queryResults.size}")
-        for (dog in queryResults) {
-            println("${dog.name}")
+        val query = realm.where(ToDoItem::class.java)
+        val results = query.findAll()
+        for (item in results) {
+            println("TODO: ${item.name}")
+            println("IMPORTANT? ${item.important}")
         }
 
     }
