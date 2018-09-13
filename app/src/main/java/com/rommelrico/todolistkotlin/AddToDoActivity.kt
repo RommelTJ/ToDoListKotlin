@@ -18,7 +18,10 @@ class AddToDoActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.addButton)
         button.setOnClickListener {
 
-
+            // Create a ToDoItem class
+            val toDo = ToDoItem()
+            toDo.name = "Buy Milk"
+            toDo.important = false
 
 
             val realm = Realm.getDefaultInstance()
