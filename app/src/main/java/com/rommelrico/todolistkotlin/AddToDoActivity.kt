@@ -3,6 +3,7 @@ package com.rommelrico.todolistkotlin
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import io.realm.Realm
 
@@ -21,12 +22,12 @@ class AddToDoActivity : AppCompatActivity() {
 
             // Values from UI.
             val editText = findViewById<EditText>(R.id.toDoEditText)
+            val checkbox = findViewById<CheckBox>(R.id.importantCheckBox)
 
             // Create a ToDoItem class
             val toDo = ToDoItem()
             toDo.name = editText.text.toString()
-            toDo.important = false
-
+            toDo.important = checkbox.isChecked
 
             val realm = Realm.getDefaultInstance()
             realm.beginTransaction()
