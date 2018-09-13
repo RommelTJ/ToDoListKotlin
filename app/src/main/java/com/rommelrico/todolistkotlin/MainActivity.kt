@@ -20,17 +20,6 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
-
-        // Realm Testing.
-        val realm = Realm.getDefaultInstance()
-        realm.beginTransaction()
-        var myDog = realm.createObject(Dog::class.java)
-        myDog.name = "Keiko"
-        myDog.age = 11
-        realm.commitTransaction()
-
-        val query = realm.where(Dog::class.java)
-        val queryResults = query.findAll()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

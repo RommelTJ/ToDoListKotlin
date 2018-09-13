@@ -20,6 +20,7 @@ class AddToDoActivity : AppCompatActivity() {
 
 
 
+
             val realm = Realm.getDefaultInstance()
             realm.beginTransaction()
             //realm.copyToRealm(OBJECT)
