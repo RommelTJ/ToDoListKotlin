@@ -31,12 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         val query = realm.where(Dog::class.java)
         val queryResults = query.findAll()
-        println("HERE")
-        println("${queryResults.size}")
-        for (dog in queryResults) {
-            println("${dog.name}")
-        }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
