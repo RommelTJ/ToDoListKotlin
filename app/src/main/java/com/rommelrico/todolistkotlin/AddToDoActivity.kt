@@ -17,7 +17,13 @@ class AddToDoActivity : AppCompatActivity() {
         // Getting access to the button.
         val button = findViewById<Button>(R.id.addButton)
         button.setOnClickListener {
+
+
+
             val realm = Realm.getDefaultInstance()
+            realm.beginTransaction()
+            //realm.copyToRealm(OBJECT)
+            realm.commitTransaction()
         }
 
     }
