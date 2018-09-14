@@ -6,7 +6,7 @@ import java.util.*
 
 open class ToDoItem: RealmObject() {
     @PrimaryKey
-    var id = UUID.randomUUID().toString()
+    private var id = UUID.randomUUID().toString()
     var name = ""
     var important = false
 
