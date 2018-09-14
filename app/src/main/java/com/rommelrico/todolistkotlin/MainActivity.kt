@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
         // Querying for To-do items.
         val realm = Realm.getDefaultInstance()
         val query = realm.where(ToDoItem::class.java)
