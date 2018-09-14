@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         listView.setOnItemClickListener { adapter,view, i, l ->
             val selectedToDo = results[i]
             val finishIntent = Intent(this, FinishToDoActivity::class.java)
-            finishIntent.putExtra("toDoItem", selectedToDo)
+            finishIntent.putExtra("toDoItem", selectedToDo?.getId())
             startActivity(finishIntent)
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, results)
