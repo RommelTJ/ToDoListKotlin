@@ -14,4 +14,8 @@ open class ToDoItem: RealmObject() {
         return name
     }
 
+    fun getId(): String {
+        return id
+    }
+
 }
