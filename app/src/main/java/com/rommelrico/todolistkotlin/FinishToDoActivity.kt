@@ -9,6 +9,7 @@ class FinishToDoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish_to_do)
+        title = "Complete ToDo"
 
         val toDoItemId = intent.getStringExtra("toDoItem")
 
