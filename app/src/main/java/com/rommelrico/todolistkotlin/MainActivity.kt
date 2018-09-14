@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         // Creating ListView Adapter and adding it to our toDoItemListView list view.
         val listView = findViewById<ListView>(R.id.toDoItemListView)
         listView.setOnItemClickListener { adapter,view, i, l ->
-            println(i)
+            val selectedToDo = results[i]
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, results)
         listView.adapter = adapter
