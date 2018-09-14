@@ -5,4 +5,6 @@
     <string name="textHint">Walk the dog</string>
     <string name="checkbox">Important</string>
     <string name="addButton">ADD</string>
+    <string name="titleTextView">TextView</string>
+    <string name="completeButton">Button</string>
 </resources>
