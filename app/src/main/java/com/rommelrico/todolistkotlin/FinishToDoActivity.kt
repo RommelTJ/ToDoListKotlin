@@ -19,5 +19,11 @@ class FinishToDoActivity : AppCompatActivity() {
 
         val textView = findViewById<TextView>(R.id.titleTextView)
         textView.text = toDoItem.toString()
+
+        // Deleting item from Realm
+        realm.beginTransaction()
+        toDoItem?.deleteFromRealm()
+        realm.commitTransaction()
+        finish()
     }
 }
