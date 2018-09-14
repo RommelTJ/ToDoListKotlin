@@ -2,6 +2,7 @@ package com.rommelrico.todolistkotlin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import io.realm.Realm
 
 class FinishToDoActivity : AppCompatActivity() {
 
@@ -11,6 +12,8 @@ class FinishToDoActivity : AppCompatActivity() {
 
         val toDoItemId = intent.getStringExtra("toDoItem")
 
-        
+        val realm = Realm.getDefaultInstance()
+        val toDoItem = realm.where(ToDoItem::class.java).equalTo("id", toDoItemId).findFirst()
+        println("ToDoItem: $toDoItem")
     }
 }
