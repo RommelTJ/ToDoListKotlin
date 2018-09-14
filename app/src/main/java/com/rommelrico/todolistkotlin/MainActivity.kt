@@ -25,11 +25,7 @@ class MainActivity : AppCompatActivity() {
         val realm = Realm.getDefaultInstance()
         val query = realm.where(ToDoItem::class.java)
         val results = query.findAll()
-        for (item in results) {
-            println("TODO: ${item.name}")
-            println("IMPORTANT? ${item.important}")
-        }
-
+        
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
