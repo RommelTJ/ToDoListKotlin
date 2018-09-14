@@ -14,6 +14,5 @@ class FinishToDoActivity : AppCompatActivity() {
 
         val realm = Realm.getDefaultInstance()
         val toDoItem = realm.where(ToDoItem::class.java).equalTo("id", toDoItemId).findFirst()
-        println("ToDoItem: $toDoItem")
     }
 }
