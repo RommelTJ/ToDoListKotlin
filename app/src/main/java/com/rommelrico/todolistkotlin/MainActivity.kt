@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import io.realm.Realm
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,16 +22,19 @@ class MainActivity : AppCompatActivity() {
             var addIntent = Intent(this, AddToDoActivity::class.java)
             startActivity(addIntent)
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
         // Querying for To-do items.
         val realm = Realm.getDefaultInstance()
         val query = realm.where(ToDoItem::class.java)
         val results = query.findAll()
-        for (item in results) {
-            println("TODO: ${item.name}")
-            println("IMPORTANT? ${item.important}")
-        }
 
+        // Creating ListView Adapter and adding it to our toDoItemListView list view.
+        val listView = findViewById<ListView>(R.id.toDoItemListView)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, results)
+        listView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
