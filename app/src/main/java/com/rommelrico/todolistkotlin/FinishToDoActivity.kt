@@ -2,6 +2,7 @@ package com.rommelrico.todolistkotlin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import io.realm.Realm
 
@@ -20,10 +21,13 @@ class FinishToDoActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.titleTextView)
         textView.text = toDoItem.toString()
 
-        // Deleting item from Realm
-        realm.beginTransaction()
-        toDoItem?.deleteFromRealm()
-        realm.commitTransaction()
-        finish()
+        // Deleting item from Realm when user clicks Complete button.
+        val completeButton = findViewById<Button>(R.id.completeButton)
+        completeButton.setOnClickListener {
+            realm.beginTransaction()
+            toDoItem?.deleteFromRealm()
+            realm.commitTransaction()
+            finish()
+        }
     }
 }
