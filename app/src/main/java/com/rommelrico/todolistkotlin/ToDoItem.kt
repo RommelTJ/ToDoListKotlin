@@ -7,7 +7,7 @@ open class ToDoItem: RealmObject() {
     var important = false
 
     override fun toString(): String {
-        return "ToDoItem(name='$name', important=$important)"
+        return name
     }
 
 }
