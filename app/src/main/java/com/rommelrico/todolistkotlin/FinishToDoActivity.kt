@@ -10,6 +10,7 @@ class FinishToDoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_finish_to_do)
 
         val toDoItemId = intent.getStringExtra("toDoItem")
-        println("toDoItemId: $toDoItemId")
+
+        
     }
 }
