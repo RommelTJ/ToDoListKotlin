@@ -2,6 +2,7 @@ package com.rommelrico.todolistkotlin
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.*
@@ -73,8 +74,12 @@ class ToDoAdapter(context: Context?, resource: Int, objects: MutableList<ToDoIte
         val toDoView = inflator.inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
 
         val toDoItem = getItem(position)
-
         toDoView.text = toDoItem.toString()
+
+        if (toDoItem.important) {
+            toDoView.setTypeface(Typeface.DEFAULT_BOLD)
+        }
+
         return toDoView
     }
 
