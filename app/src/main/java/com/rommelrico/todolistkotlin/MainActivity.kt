@@ -1,12 +1,13 @@
 package com.rommelrico.todolistkotlin
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.TextView
 import io.realm.Realm
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -58,4 +59,20 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+}
+
+class ToDoAdapter(context: Context?, resource: Int, objects: Array<out ToDoItem>?)
+    : ArrayAdapter<ToDoItem>(context, resource, objects) {
+
+    override fun getCount(): Int {
+        return super.getCount()
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val inflator = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val toDoView = inflator.inflate(android.R.layout.simple_list_item_1, parent) as TextView
+        toDoView.text = "Hello"
+        return toDoView
+    }
+
 }
