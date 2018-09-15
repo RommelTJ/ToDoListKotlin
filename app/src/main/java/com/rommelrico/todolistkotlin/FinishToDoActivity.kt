@@ -1,5 +1,6 @@
 package com.rommelrico.todolistkotlin
 
+import android.graphics.Typeface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,10 @@ class FinishToDoActivity : AppCompatActivity() {
 
         val textView = findViewById<TextView>(R.id.titleTextView)
         textView.text = toDoItem.toString()
+
+        if (toDoItem?.important!!) {
+            textView.setTypeface(Typeface.DEFAULT_BOLD)
+        }
 
         // Deleting item from Realm when user clicks Complete button.
         val completeButton = findViewById<Button>(R.id.completeButton)

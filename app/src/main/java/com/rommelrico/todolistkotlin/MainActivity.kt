@@ -1,12 +1,14 @@
 package com.rommelrico.todolistkotlin
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.TextView
 import io.realm.Realm
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,14 +41,8 @@ class MainActivity : AppCompatActivity() {
             finishIntent.putExtra("toDoItem", selectedToDo?.getId())
             startActivity(finishIntent)
         }
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, results)
+        val adapter = ToDoAdapter(this, android.R.layout.simple_list_item_1, results)
         listView.adapter = adapter
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -58,4 +54,27 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+}
+
+class ToDoAdapter(context: Context?, resource: Int, objects: MutableList<ToDoItem>?)
+    : ArrayAdapter<ToDoItem>(context, resource, objects) {
+
+    override fun getCount(): Int {
+        return super.getCount()
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val inflator = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val toDoView = inflator.inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
+
+        val toDoItem = getItem(position)
+        toDoView.text = toDoItem.toString()
+
+        if (toDoItem.important) {
+            toDoView.setTypeface(Typeface.DEFAULT_BOLD)
+        }
+
+        return toDoView
+    }
+
 }
