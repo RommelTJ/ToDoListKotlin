@@ -70,7 +70,7 @@ class ToDoAdapter(context: Context?, resource: Int, objects: MutableList<ToDoIte
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val inflator = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val toDoView = inflator.inflate(android.R.layout.simple_list_item_1, parent) as TextView
+        val toDoView = inflator.inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
         toDoView.text = "Hello"
         return toDoView
     }
