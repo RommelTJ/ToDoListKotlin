@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             finishIntent.putExtra("toDoItem", selectedToDo?.getId())
             startActivity(finishIntent)
         }
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, results)
+        val adapter = ToDoAdapter(this, android.R.layout.simple_list_item_1, results)
         listView.adapter = adapter
     }
 
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class ToDoAdapter(context: Context?, resource: Int, objects: Array<out ToDoItem>?)
+class ToDoAdapter(context: Context?, resource: Int, objects: MutableList<ToDoItem>?)
     : ArrayAdapter<ToDoItem>(context, resource, objects) {
 
     override fun getCount(): Int {
